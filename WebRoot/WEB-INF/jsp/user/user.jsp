@@ -1,4 +1,3 @@
-<%@ taglib prefix="pg" uri="http://jsptags.com/tags/navigation/pager" %>
 <%@page language="java" contentType="text/html; character=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="/common/taglibs.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -13,37 +12,42 @@
 </head>
 <body>
 <div class="panel admin-panel">
-    <div class="padding border-bottom">
-        <ul class="search" style="padding-left: 10px;">
-            <li>
-                <a class="button border-main icon-plus-square-o" href="${ctx}/itemCategory/add">新增类目</a>
-            </li>
-        </ul>
-    </div>
+    <form action="${ctx}/user/findBySql" id="listform" method="post">
+        <div class="padding border-bottom">
+            <ul class="search" style="padding-left: 10px;">
+                <li>
+                    <input type="text" placeholder="请输入用户名" name="userName" class="input" value="${obj.userName}"
+                        style="width: 250px;line-height: 17px;display: inline-block" />
+                    <a href="javascript:void(0)" onclick="changeSearch()" class="button border-main icon-search">搜索</a>
+                </li>
+            </ul>
+        </div>
+    </form>
     <table class="table table-hover text-center">
         <tr>
-            <th>ID</th>
-            <th>类别名称</th>
-            <th>操作</th>
+            <th>用户名</th>
+            <th>手机号</th>
+            <th>真实姓名</th>
+            <th>性别</th>
+            <th>邮箱</th>
+            <th>地址</th>
         </tr>
-        <c:forEach items="${pagers.datas}" var="data" varStatus="l">
-            <tr>
-                <td>${data.id}</td>
-                <td>${data.name}</td>
-                <td>
-                    <div class="button-group">
-                        <a class="button border-main" href="${ctx}/itemCategory/findBySql2?pid=${data.id}"><span class="icon-edit">查看二级分类</span> </a>
-                        <a class="button border-main" href="${ctx}/itemCategory/update?id=${data.id}"><span class="icon-edit">修改</span> </a>
-                        <a class="button border-red" href="${ctx}/itemCategory/delete?id=${data.id}"><span class="icon-trash-o">删除</span> </a>
-                    </div>
-                </td>
-            </tr>
-        </c:forEach>
+    <c:forEach items="${pagers.datas}" var="data" varStatus="l">
+        <tr>
+            <td>${data.userName}</td>
+            <td>${data.phone}</td>
+            <td>${data.realName}</td>
+            <td>${data.sex}</td>
+            <td>${data.email}</td>
+            <td>${data.address}</td>
+
+        </tr>
+    </c:forEach>
         <tr>
             <td colspan="8">
                 <div class="pagelist">
                     <!--分页开始-->
-                    <pg:pager url="${ctx}/itemCategory/findBySql" maxIndexPages="5" items="${pagers.total}" maxPageItems="15" export="curPage=pageNumber">
+                    <pg:pager url="${ctx}/user/findBySql" maxIndexPages="5" items="${pagers.total}" maxPageItems="15" export="curPage=pageNumber">
                         <pg:last>
                             共${pagers.total}记录，共${pageNumber}页，
                         </pg:last>
@@ -83,6 +87,11 @@
         </tr>
     </table>
 </div>
-
-
+<script>
+    function changeSearch(){
+        $("#listform").submit();
+    }
+</script>
 </body>
+
+</html>

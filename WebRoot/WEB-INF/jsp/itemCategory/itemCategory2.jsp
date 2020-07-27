@@ -16,7 +16,7 @@
     <div class="padding border-bottom">
         <ul class="search" style="padding-left: 10px;">
             <li>
-                <a class="button border-main icon-plus-square-o" href="${ctx}/itemCategory/add">新增类目</a>
+                <a class="button border-main icon-plus-square-o" href="${ctx}/itemCategory/add2?pid=${obj.pid}">新增二级类目</a>
             </li>
         </ul>
     </div>
@@ -26,24 +26,23 @@
             <th>类别名称</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="${pagers.datas}" var="data" varStatus="l">
-            <tr>
-                <td>${data.id}</td>
-                <td>${data.name}</td>
-                <td>
-                    <div class="button-group">
-                        <a class="button border-main" href="${ctx}/itemCategory/findBySql2?pid=${data.id}"><span class="icon-edit">查看二级分类</span> </a>
-                        <a class="button border-main" href="${ctx}/itemCategory/update?id=${data.id}"><span class="icon-edit">修改</span> </a>
-                        <a class="button border-red" href="${ctx}/itemCategory/delete?id=${data.id}"><span class="icon-trash-o">删除</span> </a>
-                    </div>
-                </td>
-            </tr>
-        </c:forEach>
+    <c:forEach items="${pagers.datas}" var="data" varStatus="l">
+        <tr>
+            <td>${data.id}</td>
+            <td>${data.name}</td>
+            <td>
+                <div class="button-group">
+                    <a class="button border-main" href="${ctx}/itemCategory/update2?id=${data.id}"><span class="icon-edit">修改</span> </a>
+                    <a class="button border-red" href="${ctx}/itemCategory/delete2?id=${data.id}&pid=${data.pid}"><span class="icon-trash-o">删除</span> </a>
+                </div>
+            </td>
+        </tr>
+    </c:forEach>
         <tr>
             <td colspan="8">
                 <div class="pagelist">
                     <!--分页开始-->
-                    <pg:pager url="${ctx}/itemCategory/findBySql" maxIndexPages="5" items="${pagers.total}" maxPageItems="15" export="curPage=pageNumber">
+                    <pg:pager url="${ctx}/itemCategory/findBySql2" maxIndexPages="5" items="${pagers.total}" maxPageItems="15" export="curPage=pageNumber">
                         <pg:last>
                             共${pagers.total}记录，共${pageNumber}页，
                         </pg:last>
@@ -83,6 +82,5 @@
         </tr>
     </table>
 </div>
-
-
 </body>
+</html>
