@@ -45,5 +45,13 @@ public class LoginController extends BaseController {
         return "/login/login";
     }
 
+    @RequestMapping("uIndex")
+    public String uIndex(){
+        return "login/uIndex";
+    }
 
+    @RequestMapping("uLogin")
+    public String uLogin(){
+        return "login/uLogin";
+    }
 }
