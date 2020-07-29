@@ -66,11 +66,10 @@
                         </div>
                     </a>
 
-                    <div class="wCa2" onclick="addcar('${data.id}')">
-                        <b><img src="${ctx}/resource/user/images/sar.png" alt=""></b>
-                        <font>加入购物车</font>
-                    </div>
-
+                </div>
+                <div class="wCa2" onclick="addcar('${data.id}')">
+                    <b><img src="${ctx}/resource/user/images/sar.png" alt=""></b>
+                    <font>加入购物车</font>
                 </div>
             </li>
         </c:forEach>
