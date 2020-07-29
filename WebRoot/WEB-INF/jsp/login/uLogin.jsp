@@ -17,12 +17,16 @@
                 <h3 class="tcenter font30 c_33" style="font-weight: 100;margin-top: 36px;margin-bottom: 36px;">账户登录</h3>
                 <div class="center_yh hidden_yh" style="width: 336px;">
                     <div class="width100 box-sizing hidden_yh" style="height: 44px;border:1px solid #c9c9c9;margin-bottom: 34px;">
-                        <img src="${ctx}/resource/user/images/rw.jpg" alt="" class="left_yh" width="42" height="42">
-                        <input type="text" placeholder="请输入用户名或手机号" name="userName" value="" style="border: 0;width: 292px;height: 42px; font-size: 16px;text-indent: 22px;">
+<%--                        <img src="${ctx}/resource/user/images/rw.jpg" alt="" class="left_yh" width="42" height="42">--%>
+                        <label>
+                            <input type="text" placeholder="请输入用户名或手机号" name="userName" value="" style="border: 0;width: 292px;height: 42px; font-size: 16px;text-indent: 22px;">
+                        </label>
                     </div>
                     <div class="width100 box-sizing hidden_yh" style="height: 44px;border:1px solid #c9c9c9;margin-bottom: 34px;">
-                        <img src="${ctx}/resource/user/images/pass.jpg" alt="" class="left_yh" width="42" height="42">
-                        <input type="password" placeholder="请输入密码" name="passWord" value="" style="border: 0;width: 292px;height: 42px; font-size: 16px;text-indent: 22px;">
+<%--                        <img src="${ctx}/resource/user/images/pass.jpg" alt="" class="left_yh" width="42" height="42">--%>
+                        <label>
+                            <input type="password" placeholder="请输入密码" name="passWord" value="" style="border: 0;width: 292px;height: 42px; font-size: 16px;text-indent: 22px;">
+                        </label>
                     </div>
                     <input type="submit" value="登录" class="center_yh" style="width: 100%;height: 43px;font-size: 16px;background: #dd4545;outline: none;border: 0;color: #fff; cursor:pointer;">
                 </div>

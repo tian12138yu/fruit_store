@@ -16,7 +16,7 @@
         <h1>管理员后台</h1>
     </div>
     <div class="head-l">
-        <a class="button button-little bg-green" href="" target="_blank">
+        <a class="button button-little bg-green" href="uIndex" target="_blank">
             <span class="icon-home"></span>前台首页
         </a>
         <a class="button button-little bg-blue" href="loginOut" target="_blank">
