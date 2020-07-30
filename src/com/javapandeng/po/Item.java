@@ -1,6 +1,7 @@
 package com.javapandeng.po;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @Author tjy
@@ -105,7 +106,7 @@ public class Item implements Serializable {
     /**
      * 评论列表
      */
-//    private List<Comment> pls;
+    private List<Comment> pls;
 
     public Integer getId() {
         return id;
@@ -299,13 +300,13 @@ public class Item implements Serializable {
         this.isDelete = isDelete;
     }
 
-//    public List<Comment> getPls() {
-//        return pls;
-//    }
-//
-//    public void setPls(List<Comment> pls) {
-//        this.pls = pls;
-//    }
+    public List<Comment> getPls() {
+        return pls;
+    }
+
+    public void setPls(List<Comment> pls) {
+        this.pls = pls;
+    }
 
     @Override
     public String toString() {

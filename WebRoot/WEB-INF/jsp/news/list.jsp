@@ -1,3 +1,4 @@
+<%@ taglib prefix="pg" uri="http://jsptags.com/tags/navigation/pager" %>
 <%@page language="java" contentType="text/html; character=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="/common/taglibs.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
